@@ -1,0 +1,22 @@
+/* Add your CSS styles here */
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+#gridTable {
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+}
+
