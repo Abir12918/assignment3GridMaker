@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Color Wheel Selector</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="colorWheelContainer">
+        <!-- Color wheel will be added here -->
+    </div>
+    <div id="selectedColor">
+        Selected Color: <input type="color" id="color">
+        <input type="text" id="hex">
+    </div>
+    <div class="button-container">
+        <button id="addRowButton">Add Row</button>
+        <button id="removeRowButton">Remove Row</button>
+        <button id="addColumnButton">Add Column</button>
+        <button id="removeColumnButton">Remove Column</button>
+    </div>
+    <table id="gridTable">
+        <tr>
+            <td class="cell"></td>
+        </tr>
+    </table>
+    <script src="script.js"></script>
+</body>
+
+</html>
