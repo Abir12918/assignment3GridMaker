@@ -4,6 +4,7 @@ let hexInput = document.querySelector('#hex');
 let color = colorInput.value;
 console.log(color);
 
+
 // colorInput.addEventListener('input', () => {
 
 //     hexInput.value = color;
@@ -15,6 +16,42 @@ console.log(color);
 
 
 
+function updateColored () 
+{
+    var gridTable = document.getElementById('gridTable');
+    var cells = gridTable.querySelectorAll('.cell');
+        for (var i = 0; i < cells.length; i++) 
+        {
+            if (cells[i].style.backgroundColor != ""){
+                cells[i].style.backgroundColor = color
+            }
+        }
+}
+
+function updateUncolored()
+{
+    var gridTable = document.getElementById('gridTable');
+    var cells = gridTable.querySelectorAll('.cell');
+        for (var i = 0; i < cells.length; i++) 
+        {
+            if (cells[i].style.backgroundColor === ""){
+                cells[i].style.backgroundColor = color
+            }
+        }
+}
+
+function clearCells()
+{
+    var gridTable = document.getElementById('gridTable');
+    var cells = gridTable.querySelectorAll('.cell');
+        for (var i = 0; i < cells.length; i++) 
+        {
+            cells[i].style.backgroundColor = "white"
+
+        }
+}
+
+
 // Function to update the selected color and hex value
 function updateColor() {
     color = colorInput.value;
@@ -23,6 +60,7 @@ function updateColor() {
 
 // Add event listener to the color input to track color changes
 colorInput.addEventListener('input', updateColor);
+
 
 // Function to change the color of a cell
 function changeColor(event) {
