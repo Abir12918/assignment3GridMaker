@@ -16,39 +16,33 @@ console.log(color);
 
 
 
-function updateColored () 
-{
+function updateColored() {
     var gridTable = document.getElementById('gridTable');
     var cells = gridTable.querySelectorAll('.cell');
-        for (var i = 0; i < cells.length; i++) 
-        {
-            if (cells[i].style.backgroundColor != ""){
-                cells[i].style.backgroundColor = color
-            }
+    for (var i = 0; i < cells.length; i++) {
+        if (cells[i].style.backgroundColor != "") {
+            cells[i].style.backgroundColor = color
         }
+    }
 }
 
-function updateUncolored()
-{
+function updateUncolored() {
     var gridTable = document.getElementById('gridTable');
     var cells = gridTable.querySelectorAll('.cell');
-        for (var i = 0; i < cells.length; i++) 
-        {
-            if (cells[i].style.backgroundColor === ""){
-                cells[i].style.backgroundColor = color
-            }
+    for (var i = 0; i < cells.length; i++) {
+        if (cells[i].style.backgroundColor === "") {
+            cells[i].style.backgroundColor = color
         }
+    }
 }
 
-function clearCells()
-{
+function clearCells() {
     var gridTable = document.getElementById('gridTable');
     var cells = gridTable.querySelectorAll('.cell');
-        for (var i = 0; i < cells.length; i++) 
-        {
-            cells[i].style.backgroundColor = "white"
+    for (var i = 0; i < cells.length; i++) {
+        cells[i].style.backgroundColor = ""
 
-        }
+    }
 }
 
 
