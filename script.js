@@ -60,6 +60,7 @@ function changeColor(event) {
     }
 }
 
+/*
 function colorCellsInDirection(cell, direction) {
     // Get the current cell's background color
     var currentColor = cell.style.backgroundColor;
@@ -131,7 +132,7 @@ function changeColor2(event) {
         colorCellsInDirection(event.target, direction);
     }
 }
-
+*/
 
 // Function to update the selected color and hex value
 function updateColor() {
