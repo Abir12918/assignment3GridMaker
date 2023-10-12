@@ -1,3 +1,6 @@
+
+/*
+
 #colorWheelContainer {
     width: 200px;
     height: 200px;
@@ -5,6 +8,17 @@
     background: conic-gradient(red, yellow, green, cyan, blue, magenta, red);
     cursor: pointer;
 }
+
+*/
+#color{
+    border-radius: 360px;
+    padding: 30px 30px;
+    border: 1px solid;
+    background-color: currentColor;
+    list-style: none;
+    
+}
+
 
 #selectedColor {
     margin-top: 10px;

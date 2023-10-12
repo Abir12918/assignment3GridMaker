@@ -14,37 +14,126 @@ console.log(color);
 // });
 
 
+//change color to help make color wheel work.
+const chosenColor = document.querySelector("#color");
+chosenColor.addEventListener('input', () => { color = chosenColor.value;
+chosenColor.style.cssText = `background-color: ${color}`;});
 
-
-function updateColored() {
+function updateColored () 
+{
     var gridTable = document.getElementById('gridTable');
     var cells = gridTable.querySelectorAll('.cell');
-    for (var i = 0; i < cells.length; i++) {
-        if (cells[i].style.backgroundColor != "") {
-            cells[i].style.backgroundColor = color
+        for (var i = 0; i < cells.length; i++) 
+        {
+            if (cells[i].style.backgroundColor != ""){
+                cells[i].style.backgroundColor = color
+            }
+        }
+}
+
+function updateUncolored()
+{
+    var gridTable = document.getElementById('gridTable');
+    var cells = gridTable.querySelectorAll('.cell');
+        for (var i = 0; i < cells.length; i++) 
+        {
+            if (cells[i].style.backgroundColor === ""){
+                cells[i].style.backgroundColor = color
+            }
+        }
+}
+
+function clearCells()
+{
+    var gridTable = document.getElementById('gridTable');
+    var cells = gridTable.querySelectorAll('.cell');
+        for (var i = 0; i < cells.length; i++) 
+        {
+            cells[i].style.backgroundColor = ""
+
+        }
+}
+
+function changeColor(event) {
+    // Check if the clicked element is a cell
+    if (event.target.classList.contains('cell')) {
+        event.target.style.backgroundColor = color;
+    }
+}
+
+/*
+function colorCellsInDirection(cell, direction) {
+    // Get the current cell's background color
+    var currentColor = cell.style.backgroundColor;
+
+    // Check if the cell is already filled with the selected color
+    if (currentColor === color) {
+        return;
+    }
+
+    // Set the background color of the current cell
+    cell.style.backgroundColor = color;
+
+    // Get the row and cell index of the current cell
+    var rowIndex = cell.parentNode.rowIndex;
+    var cellIndex = cell.cellIndex;
+
+    // Define positions for adjacent cells based on the chosen direction
+    var positions = [];
+    switch (direction) {
+        case 'above':
+            positions = [{ x: 0, y: -1 }];
+            break;
+        case 'below':
+            positions = [{ x: 0, y: 1 }];
+            break;
+        case 'left':
+            positions = [{ x: -1, y: 0 }];
+            break;
+        case 'right':
+            positions = [{ x: 1, y: 0 }];
+            break;
+        case 'all':
+            positions = [{ x: 0, y: -1 }, { x: 0, y: 1 }, { x: -1, y: 0 }, { x: 1, y: 0 }];
+            break;
+        default:
+            break;
+    }
+
+    for (var i = 0; i < positions.length; i++) {
+        var dx = positions[i].x;
+        var dy = positions[i].y;
+
+        // Calculate the coordinates of the adjacent cell
+        var newX = cellIndex + dx;
+        var newY = rowIndex + dy;
+
+        // Check if the adjacent cell is within the grid bounds
+        if (
+            newX >= 0 &&
+            newX < cell.parentNode.cells.length &&
+            newY >= 0 &&
+            newY < cell.parentNode.parentNode.rows.length
+        ) {
+            var adjacentCell = cell.parentNode.parentNode.rows[newY].cells[newX];
+
+            // Set the background color of the adjacent cell
+            adjacentCell.style.backgroundColor = color;
         }
     }
 }
 
-function updateUncolored() {
-    var gridTable = document.getElementById('gridTable');
-    var cells = gridTable.querySelectorAll('.cell');
-    for (var i = 0; i < cells.length; i++) {
-        if (cells[i].style.backgroundColor === "") {
-            cells[i].style.backgroundColor = color
-        }
+
+// Modify the changeColor function to call the colorCellsInDirection function
+function changeColor2(event) {
+    // Check if the clicked element is a cell
+    if (event.target.classList.contains('cell')) {
+        var direction = 'all'; // Default to coloring all adjacent cells
+        // You can set the 'direction' variable based on user input here.
+        colorCellsInDirection(event.target, direction);
     }
 }
-
-function clearCells() {
-    var gridTable = document.getElementById('gridTable');
-    var cells = gridTable.querySelectorAll('.cell');
-    for (var i = 0; i < cells.length; i++) {
-        cells[i].style.backgroundColor = ""
-
-    }
-}
-
+*/
 
 // Function to update the selected color and hex value
 function updateColor() {
@@ -56,6 +145,7 @@ function updateColor() {
 colorInput.addEventListener('input', updateColor);
 
 
+
 // Function to change the color of a cell
 function changeColor(event) {
     // Check if the clicked element is a cell
@@ -64,12 +154,11 @@ function changeColor(event) {
     }
 }
 
+
 var gridTable = document.getElementById('gridTable');
 gridTable.addEventListener('click', changeColor);
 
 // Rest of your code for adding/removing rows and columns...
-
-
 
 // Function to create a new row with cells for the grid table
 // Function to create a new row with cells for the grid table
@@ -164,4 +253,7 @@ addColumnButton.addEventListener("click", addColumn);
 
 // Add event listener for the "Remove Column" button
 var removeColumnButton = document.getElementById("removeColumnButton");
+
 removeColumnButton.addEventListener("click", removeColumn);
+
+
