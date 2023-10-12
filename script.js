@@ -13,6 +13,7 @@ console.log(color);
 //     console.log(cell.style.backgroundColor);
 // });
 
+
 //change color to help make color wheel work.
 const chosenColor = document.querySelector("#color");
 chosenColor.addEventListener('input', () => { color = chosenColor.value;
@@ -145,11 +146,20 @@ colorInput.addEventListener('input', updateColor);
 
 
 
+// Function to change the color of a cell
+function changeColor(event) {
+    // Check if the clicked element is a cell
+    if (event.target.classList.contains('cell')) {
+        event.target.style.backgroundColor = color;
+    }
+}
+
 
 var gridTable = document.getElementById('gridTable');
 gridTable.addEventListener('click', changeColor);
 
 // Rest of your code for adding/removing rows and columns...
+
 // Function to create a new row with cells for the grid table
 // Function to create a new row with cells for the grid table
 // Function to create a new row with cells for the grid table
@@ -243,6 +253,7 @@ addColumnButton.addEventListener("click", addColumn);
 
 // Add event listener for the "Remove Column" button
 var removeColumnButton = document.getElementById("removeColumnButton");
+
 removeColumnButton.addEventListener("click", removeColumn);
 
 
